@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Dev Learning Hub — Tailwind Responsive Grid</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen font-sans">
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header class="bg-slate-900 text-white py-8 px-6 text-center">
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
+      🌐 Web Dev Learning Hub
+    </h1>
+    <p class="mt-2 text-slate-400 text-base md:text-lg">
+      Your complete roadmap to mastering web development
+    </p>
+
+    <!--
+      ✅ DEMO AID: This badge changes based on current screen size.
+      Resize the browser to see it switch — proves the grid is responsive!
+    -->
+    <div class="mt-4 inline-flex gap-2 text-xs font-semibold">
+      <span class="block sm:hidden   bg-cyan-500   text-white px-4 py-1.5 rounded-full shadow">📱 Mobile — 1 Column</span>
+      <span class="hidden sm:block md:hidden bg-purple-500  text-white px-4 py-1.5 rounded-full shadow">📟 Small Tablet — 1 Column</span>
+      <span class="hidden md:block lg:hidden bg-orange-500  text-white px-4 py-1.5 rounded-full shadow">💻 Tablet — 2 Columns</span>
+      <span class="hidden lg:block          bg-emerald-500  text-white px-4 py-1.5 rounded-full shadow">🖥️ Desktop — 3 Columns</span>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       RESPONSIVE GRID LAYOUT
+       ─────────────────────────────────────────────────────────
+       grid          → enables CSS Grid
+       grid-cols-1   → 1 column  (mobile, < 768px)
+       md:grid-cols-2 → 2 columns (tablet,  ≥ 768px)
+       lg:grid-cols-3 → 3 columns (desktop, ≥ 1024px)
+       gap-6         → 1.5rem gap between all cards
+  ============================================================ -->
+  <main class="max-w-5xl mx-auto px-6 py-10
+               grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- ──── Card 1: HTML5 ──────────────────────────────────── -->
+    <div class="bg-white rounded-2xl shadow-md p-6
+                hover:shadow-xl hover:-translate-y-1
+                transition-all duration-300 group">
+
+      <!-- Icon -->
+      <div class="w-12 h-12 flex items-center justify-center
+                  bg-emerald-100 rounded-xl text-2xl mb-4
+                  group-hover:bg-emerald-200 transition-colors">
+        🌐
+      </div>
+
+      <!-- Title -->
+      <h2 class="text-xl font-bold text-slate-800">HTML5</h2>
+
+      <!-- Description -->
+      <p class="text-slate-500 mt-2 text-sm leading-relaxed">
+        The skeleton of every webpage. Learn semantic elements,
+        forms, accessibility, and SEO-friendly markup.
+      </p>
+
+      <!-- Footer row -->
+      <div class="mt-5 flex items-center justify-between">
+        <span class="bg-emerald-100 text-emerald-700
+                     text-xs font-semibold px-3 py-1 rounded-full">
+          Beginner
+        </span>
+        <span class="text-slate-400 text-xs">⏱ 2 weeks</span>
+      </div>
+    </div>
+
+    <!-- ──── Card 2: CSS3 ───────────────────────────────────── -->
+    <div class="bg-white rounded-2xl shadow-md p-6
+                hover:shadow-xl hover:-translate-y-1
+                transition-all duration-300 group">
+      <div class="w-12 h-12 flex items-center justify-center
+                  bg-blue-100 rounded-xl text-2xl mb-4
+                  group-hover:bg-blue-200 transition-colors">
+        🎨
+      </div>
+      <h2 class="text-xl font-bold text-slate-800">CSS3</h2>
+      <p class="text-slate-500 mt-2 text-sm leading-relaxed">
+        Style and animate the web. Flexbox, Grid, transitions,
+        responsive design, and custom properties.
+      </p>
+      <div class="mt-5 flex items-center justify-between">
+        <span class="bg-blue-100 text-blue-700
+                     text-xs font-semibold px-3 py-1 rounded-full">
+          Beginner
+        </span>
+        <span class="text-slate-400 text-xs">⏱ 3 weeks</span>
+      </div>
+    </div>
+
+    <!-- ──── Card 3: JavaScript ─────────────────────────────── -->
+    <div class="bg-white rounded-2xl shadow-md p-6
+                hover:shadow-xl hover:-translate-y-1
+                transition-all duration-300 group">
+      <div class="w-12 h-12 flex items-center justify-center
+                  bg-yellow-100 rounded-xl text-2xl mb-4
+                  group-hover:bg-yellow-200 transition-colors">
+        ⚡
+      </div>
+      <h2 class="text-xl font-bold text-slate-800">JavaScript</h2>
+      <p class="text-slate-500 mt-2 text-sm leading-relaxed">
+        Bring webpages to life. DOM manipulation, events,
+        Fetch API, and modern ES6+ syntax.
+      </p>
+      <div class="mt-5 flex items-center justify-between">
+        <span class="bg-yellow-100 text-yellow-700
+                     text-xs font-semibold px-3 py-1 rounded-full">
+          Intermediate
+        </span>
+        <span class="text-slate-400 text-xs">⏱ 4 weeks</span>
+      </div>
+    </div>
+
+    <!-- ──── Card 4: Tailwind CSS ────────────────────────────── -->
+    <div class="bg-white rounded-2xl shadow-md p-6
+                hover:shadow-xl hover:-translate-y-1
+                transition-all duration-300 group">
+      <div class="w-12 h-12 flex items-center justify-center
+                  bg-cyan-100 rounded-xl text-2xl mb-4
+                  group-hover:bg-cyan-200 transition-colors">
+        🌀
+      </div>
+      <h2 class="text-xl font-bold text-slate-800">Tailwind CSS</h2>
+      <p class="text-slate-500 mt-2 text-sm leading-relaxed">
+        Utility-first CSS framework. Build fast, consistent,
+        responsive UIs without leaving your HTML.
+      </p>
+      <div class="mt-5 flex items-center justify-between">
+        <span class="bg-cyan-100 text-cyan-700
+                     text-xs font-semibold px-3 py-1 rounded-full">
+          Intermediate
+        </span>
+        <span class="text-slate-400 text-xs">⏱ 2 weeks</span>
+      </div>
+    </div>
+
+    <!-- ──── Card 5: Git & GitHub ────────────────────────────── -->
+    <div class="bg-white rounded-2xl shadow-md p-6
+                hover:shadow-xl hover:-translate-y-1
+                transition-all duration-300 group">
+      <div class="w-12 h-12 flex items-center justify-center
+                  bg-orange-100 rounded-xl text-2xl mb-4
+                  group-hover:bg-orange-200 transition-colors">
+        🔀
+      </div>
+      <h2 class="text-xl font-bold text-slate-800">Git &amp; GitHub</h2>
+      <p class="text-slate-500 mt-2 text-sm leading-relaxed">
+        Version control your projects. Commit, branch, merge,
+        and collaborate with teammates effectively.
+      </p>
+      <div class="mt-5 flex items-center justify-between">
+        <span class="bg-orange-100 text-orange-700
+                     text-xs font-semibold px-3 py-1 rounded-full">
+          Intermediate
+        </span>
+        <span class="text-slate-400 text-xs">⏱ 2 weeks</span>
+      </div>
+    </div>
+
+    <!-- ──── Card 6: React.js ────────────────────────────────── -->
+    <div class="bg-white rounded-2xl shadow-md p-6
+                hover:shadow-xl hover:-translate-y-1
+                transition-all duration-300 group">
+      <div class="w-12 h-12 flex items-center justify-center
+                  bg-purple-100 rounded-xl text-2xl mb-4
+                  group-hover:bg-purple-200 transition-colors">
+        ⚛️
+      </div>
+      <h2 class="text-xl font-bold text-slate-800">React.js</h2>
+      <p class="text-slate-500 mt-2 text-sm leading-relaxed">
+        Build powerful component-based UIs. State, props,
+        hooks, and the virtual DOM in one framework.
+      </p>
+      <div class="mt-5 flex items-center justify-between">
+        <span class="bg-purple-100 text-purple-700
+                     text-xs font-semibold px-3 py-1 rounded-full">
+          Advanced
+        </span>
+        <span class="text-slate-400 text-xs">⏱ 6 weeks</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="text-center py-6 text-slate-400 text-sm
+                 border-t border-slate-200">
+    Built with
+    <span class="text-cyan-500 font-semibold">Tailwind CSS Responsive Grid</span>
+    &mdash; Peer Learning Activity
+  </footer>
+
+</body>
+</html>

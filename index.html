@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Analytics Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0f2fe, #eef2ff);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.03);
+        }
+
+        .glass {
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.7);
+        }
+        .dark-mode {
+            background: linear-gradient(135deg, #111827, #1f2937);
+        }
+
+        .dark-mode .glass {
+            background: rgba(31, 41, 55, 0.8);
+            color: white;
+        }
+
+        .dark-mode h2 {
+            color: #d1d5db;
+        }
+
+        .dark-mode footer {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+<header
+    class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-xl">
+
+    <div class="max-w-7xl mx-auto px-6 py-8 text-center">
+
+        <h1 class="text-4xl md:text-5xl font-bold">
+            🎓 College Analytics Dashboard
+        </h1>
+        <p class="mt-3 text-blue-100 text-lg">
+            Tailwind Responsive Grid Demonstration
+        </p>
+    </div>
+</header>
+<div class="max-w-7xl mx-auto px-6 mt-6 flex justify-end">
+    <button
+        id="themeBtn"
+        class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition">
+        🌙 Dark Mode
+    </button>
+</div>
+
+    <!-- Dashboard -->
+
+    <section class="max-w-7xl mx-auto p-6">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Students -->
+
+            <div
+                class="glass card-hover rounded-2xl shadow-lg p-6 transition-all duration-300">
+
+                <div class="flex justify-between items-center">
+
+                    <div>
+                        <h2 class="text-gray-500 font-semibold">
+                            Total Students
+                        </h2>
+
+                        <h3 id="students"
+                            class="text-4xl font-bold text-blue-600 mt-3">
+                            0
+                        </h3>
+                    </div>
+
+                    <div class="text-5xl">
+                        👨‍🎓
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Attendance -->
+
+            <div
+                class="glass card-hover rounded-2xl shadow-lg p-6 transition-all duration-300">
+
+                <div class="flex justify-between items-center">
+
+                    <div>
+                        <h2 class="text-gray-500 font-semibold">
+                            Attendance
+                        </h2>
+
+                        <h3 class="text-4xl font-bold text-green-600 mt-3">
+                            92%
+                        </h3>
+                    </div>
+
+                    <div class="text-5xl">
+                        📊
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Assignments -->
+
+            <div
+                class="glass card-hover rounded-2xl shadow-lg p-6 transition-all duration-300">
+
+                <div class="flex justify-between items-center">
+
+                    <div>
+                        <h2 class="text-gray-500 font-semibold">
+                            Assignments
+                        </h2>
+
+                        <h3 class="text-4xl font-bold text-purple-600 mt-3">
+                            48
+                        </h3>
+                    </div>
+
+                    <div class="text-5xl">
+                        📝
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Courses -->
+
+            <div
+                class="glass card-hover rounded-2xl shadow-lg p-6 transition-all duration-300">
+
+                <div class="flex justify-between items-center">
+
+                    <div>
+                        <h2 class="text-gray-500 font-semibold">
+                            Courses
+                        </h2>
+
+                        <h3 class="text-4xl font-bold text-orange-500 mt-3">
+                            12
+                        </h3>
+                    </div>
+
+                    <div class="text-5xl">
+                        📚
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Faculty -->
+
+            <div
+                class="glass card-hover rounded-2xl shadow-lg p-6 transition-all duration-300">
+
+                <div class="flex justify-between items-center">
+
+                    <div>
+                        <h2 class="text-gray-500 font-semibold">
+                            Faculty
+                        </h2>
+
+                        <h3 class="text-4xl font-bold text-red-500 mt-3">
+                            25
+                        </h3>
+                    </div>
+
+                    <div class="text-5xl">
+                        👩‍🏫
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Placement -->
+
+            <div
+                class="glass card-hover rounded-2xl shadow-lg p-6 transition-all duration-300">
+
+                <div class="flex justify-between items-center">
+
+                    <div>
+                        <h2 class="text-gray-500 font-semibold">
+                            Placement Rate
+                        </h2>
+
+                        <h3 class="text-4xl font-bold text-indigo-600 mt-3">
+                            88%
+                        </h3>
+                    </div>
+
+                    <div class="text-5xl">
+                        🚀
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer
+        class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-center text-white py-4 mt-10">
+
+        Built Using Tailwind CSS Responsive Grid
+    </footer>
+
+    <script>
+
+        function animateCounter(id, target) {
+
+            let count = 0;
+
+            const increment = target / 100;
+
+            const counter = setInterval(() => {
+
+                count += increment;
+
+                document.getElementById(id).innerText =
+                    Math.floor(count);
+
+                if (count >= target) {
+
+                    document.getElementById(id).innerText = target;
+                    clearInterval(counter);
+
+                }
+
+            }, 20);
+
+        }
+        animateCounter("students", 1250);
+        document.getElementById("themeBtn").addEventListener("click", () => {
+
+        document.body.classList.toggle("dark-mode");
+
+        const btn = document.getElementById("themeBtn");
+
+        if(document.body.classList.contains("dark-mode")){
+            btn.innerHTML = "☀️ Light Mode";
+        } else {
+            btn.innerHTML = "🌙 Dark Mode";
+        }
+
+        });
+    </script>
+</body>
+</html>
